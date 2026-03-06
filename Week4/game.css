@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(16, 26, 25);
+}
+
+.header {
+    color: rgb(221, 229, 235);
+    text-align: center;
+    font-size: 2.5rem;
+    font-family:Georgia, 'Times New Roman', Times, serif
+}
+
+.canvas{
+    display:flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+#MyCanvas {
+    border: 2px solid #eff6f6;
+    border-radius: 10px;
+    background-color: #2a2c2f;
+    box-shadow: 0 0 10px rgba(248, 243, 243, 0.5);
+}

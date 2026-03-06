@@ -1,0 +1,100 @@
+/* ---------- Global ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+/* ---------- Typography ---------- */
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+h1, h2, h3 {
+  margin-bottom: 15px;
+  color: #333366;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* ---------- Navigation ---------- */
+
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav li {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  padding: 8px 12px;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover {
+  color: #0055aa;
+}
+
+/* ---------- Images ---------- */
+
+img {
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 1px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+/* ---------- Forms ---------- */
+
+form {
+  padding-bottom: 20px;
+  border-radius: 10px;
+  background-color: turquoise;
+}
+
+/* ---------- Buttons ---------- */
+
+button[type="submit"] {
+  padding: 8px 16px;
+  background-color: #333366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #222255;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  background-color: #333366;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-top: 3px solid #ccccff;
+}

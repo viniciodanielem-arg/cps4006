@@ -1,0 +1,430 @@
+body {
+    font-size: 1rem;
+    background-color: #eee;
+}
+
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    margin: 0 auto;
+
+}
+
+nav img {
+    width: 120px;
+    height: auto;
+}
+
+/* 1) Align header elements with Flexbox */
+.site-header {
+    display: flex;                  /* puts children (logo + nav) in a row */
+    justify-content: space-between; /* pushes logo left, nav right */
+    align-items: center;            /* vertically centers logo and links */
+    padding: 1rem;                  /* space inside the header */
+    border-bottom: 2px solid #ccc;  /* line under header for separation */
+    background: #fff;               /* optional: makes header clean */
+}
+
+/* Logo sizing */
+.logo {
+    width: 120px;   /* sets logo width */
+    height: auto;   /* keeps aspect ratio */
+    display: block; /* removes extra inline spacing under image */
+}
+
+/* 2) Style the navigation menu */
+.main-nav ul {
+    list-style: none; /* removes bullets */
+    margin: 0;        /* removes default spacing */
+    padding: 0;       /* removes default spacing */
+    display: flex;    /* puts list items in a row */
+    gap: 1rem;        /* space between links */
+}
+
+.main-nav a {
+    text-decoration: none; /* removes underline */
+    color: #111;           /* link color */
+    font-weight: 600;      /* thicker text */
+    padding: 0.5rem 0.75rem; /* clickable area (better UX) */
+}
+
+/* 3) Enhance UX: hover effect */
+.main-nav a:hover {
+    color: blue; /* changes color when mouse is over link */
+}
+
+/* 3) Enhance UX: active/current page */
+.main-nav a.current {
+    border-bottom: 3px solid blue; /* highlights the current page link */
+}
+
+/* Articles section layout (sidebar + article side by side) */
+.articles {
+    display: flex;          /* puts aside and article in a row */
+    gap: 2rem;              /* space between sidebar and article */
+    padding: 1.5rem;        /* space inside the section */
+    background-color: #fff; /* white background like your main container */
+    align-items: flex-start;/* aligns items at the top */
+}
+
+/* Sidebar: fixed width */
+.sidebar {
+    flex: 0 0 250px;        /* do not grow, do not shrink, fixed 250px basis */
+    padding: 1rem;          /* spacing inside the sidebar */
+    border: 1px solid #ddd; /* subtle border */
+    border-radius: 10px;    /* rounded corners */
+    background-color: #f9f9f9;
+}
+
+/* Sidebar menu layout */
+.side-menu ul {
+    list-style: none;        /* removes bullets */
+    margin: 0;
+    padding: 0;
+
+    display: flex;           /* makes the <li> items flex items */
+    flex-direction: column;  /* stacks items vertically */
+    gap: 0.75rem;            /* even spacing between menu items */
+}
+
+/* Links inside sidebar menu */
+.side-menu a {
+    display: block;          /* makes the whole area clickable */
+    text-decoration: none;   /* removes underline */
+    color: #111;
+    padding: 0.6rem 0.75rem; /* clickable padding */
+    border-radius: 8px;      /* rounded hover background */
+}
+
+/* Hover effect for user interaction */
+.side-menu a:hover {
+    background-color: #e6e6e6; /* highlight on hover */
+}
+
+/* Main article takes remaining space */
+.main-article {
+    flex: 1;                 /* fills the rest of the row */
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Optional: "Read more" link styling */
+.read-more {
+    display: inline-block;
+    margin-top: 0.75rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+.read-more:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   MOBILE-FIRST (default)
+   ========================= */
+
+/* Header wraps on small screens so logo and menu can stack nicely */
+.site-header {
+    flex-wrap: wrap;               /* allows items to move onto a new line */
+    justify-content: space-between;/* keeps logo left and nav right when possible */
+}
+
+/* Main navigation menu becomes vertical on mobile */
+.main-nav ul {
+    flex-direction: column; /* stacks Home/Destinations/etc. */
+    gap: 0.5rem;
+    width: 100%;            /* makes the menu take the full row when it wraps */
+}
+
+/* Optional: makes each link feel like a touch-friendly button */
+.main-nav a {
+    display: block;
+    padding: 0.75rem 1rem;
+}
+
+/* Articles section stacks sidebar above article on mobile */
+.articles {
+    display: block;  /* stacks aside and article */
+}
+
+/* Sidebar takes full width on mobile */
+.sidebar {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+
+/* =========================
+   TABLET (600px+)
+   ========================= */
+@media (min-width: 600px) {
+
+    /* Keep header items on one line */
+    .site-header {
+        flex-wrap: nowrap; /* prevents wrapping */
+    }
+
+    /* Main nav becomes horizontal */
+    .main-nav ul {
+        flex-direction: row; /* puts menu items side-by-side */
+        width: auto;         /* shrink back to content width */
+        gap: 1rem;
+    }
+
+    /* Articles become side-by-side again */
+    .articles {
+        display: flex;  /* puts sidebar and article in a row */
+        gap: 2rem;
+    }
+
+    /* Sidebar fixed width returns */
+    .sidebar {
+        flex: 0 0 250px; /* fixed sidebar width */
+        margin-bottom: 0; /* remove mobile spacing */
+    }
+
+    /* Article fills remaining space */
+    .main-article {
+        flex: 1;
+    }
+}
+
+/* =========================
+   DESKTOP (900px+)
+   ========================= */
+@media (min-width: 900px) {
+
+    /* Optional: make the article easier to read with columns */
+    .main-article p {
+        column-count: 2;     /* splits paragraphs into 2 columns */
+        column-gap: 2rem;    /* space between columns */
+    }
+}
+
+
+
+
+/* HERO SECTION */
+.hero {
+    position: relative;      /* allows overlay content to be positioned inside */
+    border-radius: 12px;
+    overflow: hidden;        /* keeps image rounded with the section */
+    margin-bottom: 2rem;
+}
+
+/* Make hero image responsive */
+.hero-img {
+    width: 100%;             /* fills the hero width */
+    height: auto;            /* keeps image proportions */
+    display: block;          /* removes extra gap under image */
+}
+
+/* Text overlay centered on top of hero image */
+.hero-content {
+    position: absolute;      /* sits on top of the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfectly centers the box */
+    text-align: center;
+    background: rgba(0, 0, 0, 0.45);  /* dark overlay for readability */
+    color: #fff;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    width: min(90%, 700px);  /* responsive width with a max */
+}
+
+/* Hero heading */
+.hero-content h1 {
+    margin: 0 0 0.5rem 0;
+    font-size: 2rem;
+}
+
+/* Hero paragraph */
+.hero-content p {
+    margin: 0 0 1rem 0;
+    line-height: 1.5;
+}
+
+/* Call-to-action button */
+.hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0.75rem 1.25rem;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #111;
+    font-weight: 700;
+}
+
+/* Hover effect for button */
+.hero-btn:hover {
+    background-color: #e6e6e6;
+}
+
+
+
+
+
+/* Base font scales from the browser default (usually 16px) */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 1rem;          /* 1rem = base size (scales well) */
+  line-height: 1.6;         /* improves readability */
+}
+
+/* Headings use rem so they scale consistently */
+h1 { font-size: 2rem; }     /* ~32px if base is 16px */
+h2 { font-size: 1.5rem; }   /* ~24px */
+h3 { font-size: 1.25rem; }  /* ~20px */
+
+p, li {
+  font-size: 1rem;          /* keeps paragraph/list readable */
+}
+
+/* Navigation text slightly smaller */
+.main-nav a {
+  font-size: 1rem;
+}
+
+/* Hero heading scales a bit with viewport width */
+.hero-content h1 {
+  font-size: clamp(1.6rem, 4vw, 2.6rem);
+}
+
+
+
+
+
+
+
+
+
+/* CARD CONTAINER (mobile-first) */
+.cards {
+  display: flex;          /* makes the cards flex items */
+  flex-direction: column; /* stack vertically on small screens */
+  gap: 1rem;              /* spacing between cards */
+  padding: 1rem;          /* space inside the cards section */
+}
+
+/* EACH CARD */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+
+  transition: box-shadow 0.25s ease; /* smooth hover shadow change */
+}
+
+/* Hover: darker shadow */
+.card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.22);
+}
+
+/* Tablet and up: cards become horizontal and wrap */
+@media (min-width: 600px) {
+  .cards {
+    flex-direction: row; /* line up horizontally */
+    flex-wrap: wrap;     /* allow cards to wrap to next row */
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex: 1 1 260px;     /* grow, shrink, and try to be ~260px wide */
+  }
+}
+
+/* Desktop: slightly wider cards */
+@media (min-width: 900px) {
+  .card {
+    flex-basis: 300px;
+  }
+}
+
+
+
+
+
+
+/* ======================
+   GALLERY GRID
+   ====================== */
+
+.gallery {
+  display: grid;              /* turns it into a grid container */
+  grid-template-columns: 1fr; /* mobile: 1 column */
+  gap: 1rem;                  /* space between images */
+  padding: 1rem;
+}
+
+/* Make images responsive */
+.gallery img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;          /* prevents stretching */
+  border-radius: 12px;
+}
+
+
+@media (min-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+
+
+
+/* ======================
+   FOOTER
+   ====================== */
+
+.site-footer {
+  display: flex;
+  flex-direction: column; /* mobile: stack vertically */
+  gap: 1rem;
+  padding: 2rem 1rem;
+  background: #111;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.site-footer a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
+@media (min-width: 600px) {
+  .site-footer {
+    flex-direction: row;        /* horizontal layout */
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+}

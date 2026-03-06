@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog</title>
+    <link rel="stylesheet" href="default.css">
+</head>
+<body>
+    <header class="site-header">
+        <img class="logo" src="images/travel-vlog.jpg" alt="Travel blog logo">
+
+        <nav class="main-nav">
+            <ul>
+                <li><a class="current" href="index.html">Home</a></li>
+                <li><a href="destinations.html">Destinations</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+
+    
+    <main>
+        <section class="hero">
+    <picture>
+        <!-- Large image for desktops -->
+        <source
+            srcset="images/hero-large.jpg"
+            media="(min-width: 900px)">
+
+        <!-- Medium image for tablets -->
+        <source
+            srcset="images/hero-medium.jpg"
+            media="(min-width: 600px)">
+
+        <!-- Default (mobile-first) image -->
+        <img
+            src="images/hero-small.jpg"
+            alt="A breathtaking travel destination"
+            class="hero-img">
+    </picture>
+
+    <div class="hero-content">
+        <h1>Explore the World, One Trip at a Time</h1>
+        <p>Find destinations, tips, and stories to inspire your next adventure.</p>
+        <a class="hero-btn" href="destinations.html">Start Exploring</a>
+    </div>
+</section>
+
+
+        <section class="articles">
+    <aside class="sidebar">
+        <h2>Explore</h2>
+
+        <nav class="side-menu" aria-label="Sidebar navigation">
+            <ul>
+                <li><a href="#">Latest Posts</a></li>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Travel Tips</a></li>
+                <li><a href="#">Packing Lists</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <article class="main-article">
+        <h2>Featured Article</h2>
+        <p>
+            Welcome to the travel blog! This featured story highlights an unforgettable trip,
+            with practical tips, must-see spots, and a few hidden gems.
+        </p>
+        <p>
+            Flexbox makes it easy to place this article beside the sidebar on wide screens,
+            while keeping everything readable.
+        </p>
+        <a class="read-more" href="#">Read more</a>
+    </article>
+</section>
+
+                
+        <section class="cards">
+            <div class="card">
+                <h2>Travel Story 1</h2>
+                <p>Exciting adventure in a new country.</p>
+            </div>
+            <div class="card">
+                <h2>Travel Story 2</h2>
+                <p>Amazing experiences from a tropical island.</p>
+            </div>
+            <div class="card">
+                <h2>Travel Story 3</h2>
+                <p>Discovering hidden gems in Europe.</p>
+            </div>
+        </section>
+    </main>
+    
+<footer class="site-footer">
+  <div class="footer-left">
+    <h3>Travel Blog</h3>
+    <p>Exploring the world, one journey at a time.</p>
+  </div>
+
+  <div class="footer-links">
+    <a href="index.html">Home</a>
+    <a href="destinations.html">Destinations</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <div class="footer-copy">
+    <p>&copy; 2025 Travel Blog</p>
+  </div>
+</footer>
+ 
+</body>
+</html>
