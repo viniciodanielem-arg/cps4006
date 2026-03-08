@@ -7,7 +7,7 @@ const App = () => {
     <div>
       <NavMenu />
       <h1>Welcome!</h1>
-      <UserCard name="John Doe" age={30} email="john.doe@example.com" />
+      <UserCard age={30} email="john.doe@example.com" />
     </div>
   );
 }
